@@ -1,0 +1,26 @@
+{
+  "name": "playwrightfromscratch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "rm -rf reports/*",
+    "test": "node run-multi-rerun.js",
+    "test:rerun": "node run-tests.js --run-from-rerun; node generate-html-report.js reports/rerun-report.json reports/rerun-report.html",
+    "test:all": "node run-tests.js",
+    "test:failures": "node run-tests.js --rerun-failures",
+    "test:retry": "node run-tests.js --with-retry"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.3.0",
+    "@playwright/test": "^1.52.0",
+    "cucumber-html-reporter": "^7.2.0",
+    "playwright": "^1.52.0"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
